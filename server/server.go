@@ -33,7 +33,7 @@ func (s *server) HumiditySensor(req *sensorpb.SensorRequest,
 	stream sensorpb.Sensor_HumiditySensorServer) error {
 
 	for {
-		time.Sleep(time.Second * 2)
+		time.Sleep(time.Millisecond * 100)
 
 		humd := s.Sensor.GetHumiditySensor()
 
@@ -46,7 +46,7 @@ func (s *server) HumiditySensor(req *sensorpb.SensorRequest,
 }
 
 var (
-	port int = 8080
+	port int = 50051
 )
 
 func main() {
